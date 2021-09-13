@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,14 @@ Route::get('/welcome', function () {
 //    return view('example', ['firstval' => $first, 'secondval' => $second]);
 //});
 
-Route::get('/form',function () {
-    return view ("form");
-});
+//Route::get('/form',function () {
+//    return view ("form");
+//});
+
+Route::get('/form',[FormController::class, 'index'])->name('get-form');
+Route::post('/form',[FormController::class, 'store'])->name('post-form');
+
+
 
 //Route::get('/form', [FormController::class, 'create'])->name('get-form');
 //Route::post('/sum', [FormController::class, 'sum'])->name('sum-of-numbers');

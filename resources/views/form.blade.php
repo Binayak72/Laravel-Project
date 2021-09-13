@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Register</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,65 +14,112 @@
 
     <style type="text/css">
 
+        /*body{*/
+        /*    background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);*/
+        /*}*/
+
         body{
-            background-image: url(http://www.joburgchiropractor.co.za/images/background.jpg);
+            margin: 0;
+            padding: 0;
+            background: #1f3826;
+            background-size: 175%;
+            background-position: center;
+            font-family: sans-serif;
         }
+
+        .loginbox{
+            width: 320px;
+            height: 420px;
+            color: #fff;
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%);
+            box-sizing: border-box;
+            padding: 70px 30px;
+        }
+
+        .avatar{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 50px);
+        }
+
+        h1{
+            margin: 0;
+            padding: 0 0 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .loginbox p{
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .loginbox input{
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .loginbox input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="date"]
+        {
+            border: none;
+            border-bottom: 2px solid #008000;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .loginbox input[type="submit"]
+        {
+            border: none;
+            outline: none;
+            height: 30px;
+            background: #fb2525;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 50px;
+        }
+        .loginbox input[type="submit"]:hover
+        {
+            cursor: pointer;
+            background: #008000;
+            color: #000;
+        }
+
 
     </style>
 
 </head>
 <body>
 
-<div class="container" style="margin-top: 5%;">
-    <div class="row">
-        <div class="col-sm-4"> </div>
-        <div class="col-md-4">
+<div class="loginbox">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWBVrXPtBsgQ4Sp9nO27hsaSmWSFeEZX5ID3ZJE1CraXxUP72wEKNDZbWyEvYGef2iJEo&usqp=CAU" class="avatar">
+    <h1>Register Here</h1>
+    <form action="" method="POST" enctype="multipart/form-data">
+        @csrf
+        <p>Name</p>
+        <input type="text" name="name">
+        <p>Address</p>
+        <input type="text" name="address">
+        <p>Contact</p>
+        <input type="tel" name="phone">
+        <p>Gmail</p>
+        <input type="email" name="email">
+        <p>Profile Picture</p>
+        <input type="file" name="profile">
+        <input type="submit" name="" value="Register">
+    </form>
 
-            <h1 class="text-center text-success"> Register page</h1>
-            <br/>
-
-            <div class="col-sm-12">
-
-                <br/>
-
-
-                <div class="tab-content">
-                    <div id="home" class="tab-pane fade in active">
-
-                        <form action="#">
-
-                            <div class="form-group">
-                                <label for="UserName">Username</label>
-                                <input type="text" class="form-control" id="email">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email address:</label>
-                                <input type="email" class="form-control" id="email">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="pwd">Password:</label>
-                                <input type="password" class="form-control" id="pwd">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="pwd">Confirm Password:</label>
-                                <input type="password" class="form-control" id="pwd">
-                            </div>
+</div>
 
 
-
-                            <button type="submit" class="btn btn-default btn-lg">Submit</button>
-                            <button type="submit" class=" pull-right btn-link"><a href="www.google.com">Forget password</a></button>
-
-                        </form>
-                        <br/>
-
-
-                    </div>
-
-
-    </div>
 </body>
 </html>
